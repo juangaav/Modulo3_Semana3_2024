@@ -88,7 +88,26 @@ function renderList(data) {
         // append the list item to the list
         list.appendChild(listItem);
     });
+
+    // calculate total price
+    const totalPrice = data.reduce((total, item) => total + parseFloat(item.price), 0);
+
+    // create and append total price list item
+    const totalListItem = document.createElement('li');
+    totalListItem.className = 'list-group-item d-flex justify-content-between';
+
+    const totalText = document.createElement('span');
+    totalText.textContent = 'Total (USD)';
+    totalListItem.appendChild(totalText);
+
+    const totalValue = document.createElement('strong');
+    totalValue.id = 'total-price';
+    totalValue.textContent = "$" + totalPrice.toFixed(2);
+    totalListItem.appendChild(totalValue);
+
+    list.appendChild(totalListItem);
 }
+
 
 
 
