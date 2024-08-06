@@ -58,7 +58,7 @@
               id="product-img"
               class="form-select mb-3 mt-2 image-picker show-html"
               aria-label="Default select example"
-              onChange="getSelectedImage(this);"
+              onChange="handleChange(this);"
             >
               <option value="Default">Seleccionar Imagen</option>
               <option
@@ -149,6 +149,11 @@
         } else if (sel.options[sel.selectedIndex].value == '3') {
           elem.src = 'assets/img/vinyl-record-g9e6a0306d_640.jpg';
         }
+      }
+
+      function handleChange(sel) {
+        getSelectedImage(sel);
+        console.log(sel);
       }
     </script>
   </body>
