@@ -1,7 +1,10 @@
 window.addEventListener('DOMContentLoaded', function () {
-  console.log('DOMContentLoaded');
   const tweetButton = document.querySelector('#create-tweet-button');
   let data = [];
+
+  function saveToLocalStorage(data) {
+    localStorage.setItem('data', JSON.stringify(data));
+  }
 
   tweetButton.addEventListener('click', function (event) {
     event.preventDefault();
@@ -18,9 +21,15 @@ window.addEventListener('DOMContentLoaded', function () {
     cardPrice.innerHTML = '$' + precioInput.value;
     cardDesc.innerHTML = descriptionInput.value;
 
-    productInput.value = '';
-    precioInput.value = '';
-    descriptionInput.value = '';
+    const product = {
+      name: productInput.value,
+      price: precioInput.value,
+      description: descriptionInput.value,
+    };
+
+    data.push(product);
+
+    saveToLocalStorage(data);
   });
 
   document
