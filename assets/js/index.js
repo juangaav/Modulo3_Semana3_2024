@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     const product = {
       name: productInput.value,
-      price: precioInput.value,
+      price: precioInput.value || 0,
       description: descriptionInput.value,
     };
 
