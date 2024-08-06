@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semana 3 - Creación de elementos, obtención de datos y CRUD basic</title>
+    <title>
+      Semana 3 - Creación de elementos, obtención de datos y CRUD basic
+    </title>
     <link rel="stylesheet" href="./assets/css/bootstrap.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
@@ -25,7 +27,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col">
-                      <h4 id= "card-title" class="card-title">Sneakers</h4>
+                      <h4 id="card-title" class="card-title">Sneakers</h4>
                       <h4 id="card-price">$60</h4>
                     </div>
                     <div class="col align-items-center">
@@ -39,7 +41,12 @@
                   </div>
                 </div>
                 <hr />
-                <p id="card-desc" class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, quaerat error? Ipsum quisquam voluptatibus ipsam, inventore odit accusamus nostrum maiores quae deleniti, quidem reiciendis? Doloremque illo nihil totam quasi voluptas!.</p>
+                <p id="card-desc" class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Illum, quaerat error? Ipsum quisquam voluptatibus ipsam,
+                  inventore odit accusamus nostrum maiores quae deleniti, quidem
+                  reiciendis? Doloremque illo nihil totam quasi voluptas!.
+                </p>
                 <a href="#" class="btn btn-success">Buy Now</a>
                 <a href="#" class="btn btn btn-outline-success">Cancel</a>
               </div>
@@ -47,14 +54,36 @@
           </div>
           <div class="col-lg-6">
             <h3 class="display-6">Personalizar</h3>
-            <select id="product-img"
-            class="form-select mb-3 mt-2 image-picker show-html"
-            aria-label="Default select example"
-            onChange="getSelectedImage(this);">
+            <select
+              id="product-img"
+              class="form-select mb-3 mt-2 image-picker show-html"
+              aria-label="Default select example"
+              onChange="getSelectedImage(this);"
+            >
               <option value="Default">Seleccionar Imagen</option>
-              <option data-img-src="assets/img/computer-g3ced3ba95_640.jpg" data-img-class="first" data-img-alt="Page 1" value="1"> Laptop </option>
-              <option data-img-src="assets/img/shoes-g512cfdef2_640.jpg" data-img-alt="Page 2" value="2"> Sneakers </option>
-              <option data-img-src="assets/img/vinyl-record-g9e6a0306d_640.jpg" data-img-alt="Page 3" data-img-class="last" value="3"> Record Player </option>
+              <option
+                data-img-src="assets/img/computer-g3ced3ba95_640.jpg"
+                data-img-class="first"
+                data-img-alt="Page 1"
+                value="1"
+              >
+                Laptop
+              </option>
+              <option
+                data-img-src="assets/img/shoes-g512cfdef2_640.jpg"
+                data-img-alt="Page 2"
+                value="2"
+              >
+                Sneakers
+              </option>
+              <option
+                data-img-src="assets/img/vinyl-record-g9e6a0306d_640.jpg"
+                data-img-alt="Page 3"
+                data-img-class="last"
+                value="3"
+              >
+                Record Player
+              </option>
             </select>
             <form id="product-form">
               <div class="form-group">
@@ -107,21 +136,20 @@
     <script src="./assets/js/jquery-3.6.1.min.js"></script>
     <script src="./assets/js/image-picker.js"></script>
     <script type="text/javascript">
-      jQuery("select.image-picker").imagepicker({
-        hide_select:  false,
+      jQuery('select.image-picker').imagepicker({
+        hide_select: false,
       });
 
       function getSelectedImage(sel) {
-        const elem = document.getElementById('card-image');  
-        if(sel.options[sel.selectedIndex].value == "1"){
-          elem.src = "assets/img/computer-g3ced3ba95_640.jpg";
-        }else if(sel.options[sel.selectedIndex].value == "2"){
-          elem.src = "assets/img/shoes-g512cfdef2_640.jpg";
-        }else if(sel.options[sel.selectedIndex].value == "3"){
-          elem.src = "assets/img/vinyl-record-g9e6a0306d_640.jpg";
-        };
-      } 
-
+        const elem = document.getElementById('card-image');
+        if (sel.options[sel.selectedIndex].value == '1') {
+          elem.src = 'assets/img/computer-g3ced3ba95_640.jpg';
+        } else if (sel.options[sel.selectedIndex].value == '2') {
+          elem.src = 'assets/img/shoes-g512cfdef2_640.jpg';
+        } else if (sel.options[sel.selectedIndex].value == '3') {
+          elem.src = 'assets/img/vinyl-record-g9e6a0306d_640.jpg';
+        }
+      }
     </script>
   </body>
 </html>
