@@ -92,7 +92,6 @@
                   id="product-input"
                   type="text"
                   class="form-control mb-3 mt-2"
-                  id="product"
                   placeholder="Nombre del Producto"
                 />
               </div>
@@ -151,9 +150,18 @@
         }
       }
 
+      function getSelectedName(sel) {
+        return sel.options[sel.selectedIndex].text;
+      }
+
+      function updateProductName(name) {
+        const elem = document.getElementById('product-input');
+        elem.value = name;
+      }
+
       function handleChange(sel) {
         getSelectedImage(sel);
-        console.log(sel);
+        updateProductName(getSelectedName(sel));
       }
     </script>
   </body>
